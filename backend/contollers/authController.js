@@ -49,6 +49,7 @@ const loginUser = async (req, res) => {
     };
 
     const token=jwt.sign(payload, process.env.ACCESS_TOKEN, { expiresIn: "1h" });
+    
     return res.status(200).json({ token });
   } catch (error) {
     return res.status(500).json({ msg: error.message });
